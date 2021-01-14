@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.0.1",
     author="Shayan Karimi",
     author_email="shayankarimi0078@gmail.com",
-    description="A boilerplate starter for your Django Rest Framework project",
+    description="Django Rest Framework command-line tools",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/shywn-mrk/drf-cli",
