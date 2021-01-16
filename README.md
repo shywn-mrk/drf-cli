@@ -24,7 +24,7 @@ This package is under development and it takes a while for me to publish it to [
 
 You can initialize a new starter project using:
 ```
-drf-cli init
+drf-cli init your-project-name
 ```
 This will create a starter project and you can build on top of that.
 
