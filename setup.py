@@ -17,6 +17,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/shywn-mrk/drf-cli",
     packages=setuptools.find_packages(),
+    include_package_data=True,
     install_requires=install_requires,
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -26,7 +27,7 @@ setuptools.setup(
     python_requires=">=3.6",
     entry_points= {
         "console_scripts": [
-            "drf-cli = drf_cli.__main__:main"
+            "drf-cli = drf_cli.__main__:cli"
         ]
     }
 )
