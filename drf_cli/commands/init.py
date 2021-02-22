@@ -1,9 +1,10 @@
 import click
 import os
 import subprocess
+import shutil
 
 @click.command()
-@click.argument('project_name')
+@click.argument("project_name")
 def cli(project_name):
     """
     Initialize a new Django Rest Framework project
@@ -11,11 +12,10 @@ def cli(project_name):
 
     try:
         repo_url = "https://github.com/shywn-mrk/drf-starter.git"
-        command = f"git clone {repo_url}"
+
+        command = f"git clone {repo_url} {project_name}"
         subprocess.run(command.split(), shell=True)
 
-        os.rename('drf-starter', project_name)
-
-        print('Project has been initialized successfuly!')
+        print("Project has been initialized successfuly!")
     except:
-        print('Something went wrong')
+        print("Something went wrong")
