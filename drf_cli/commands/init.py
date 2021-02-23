@@ -29,13 +29,16 @@ def install_requirements(name):
     os.chdir(full_path)
     os.system("python -m venv env")
 
+    env_sub_dir = ""
+    source = ""
     if OPERATING_SYSTEM == "Windows":
         env_sub_dir = "Scripts"
     else:
         env_sub_dir = "bin"
+        source = "source"
 
     activate_file = os.path.join(full_path, 'env', env_sub_dir, 'activate')
-    os.system(f"{activate_file} && pip install -r requirements.txt")
+    os.system(f"{source}{activate_file} && pip install -r requirements.txt")
 
 @click.command()
 @click.argument("name")
