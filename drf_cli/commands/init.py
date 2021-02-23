@@ -1,6 +1,5 @@
 import click
 import os
-import subprocess
 import platform
 
 OPERATING_SYSTEM = platform.system()
@@ -13,32 +12,30 @@ def clone_repository(name):
     repo_url = "https://github.com/shywn-mrk/drf-starter.git"
 
     command = f"git clone {repo_url} {name}"
-    subprocess.run(command.split(), shell=True)
+    os.system(command)
 
     if OPERATING_SYSTEM == "Windows":
         os.system(f"rmdir /s /q \"{name}/.git\"")
     else:
         os.system(f"rm -rf {name}/.git")
 
-# def install_requirements(name):
-#     """
-#     Creates a virtual environment and installs the requirements
-#     """
+def install_requirements(name):
+    """
+    Creates a virtual environment and installs the requirements
+    """
 
-#     parent = os.getcwd()
-#     full_path = os.path.join(parent, name)
-#     os.chdir(full_path)
-#     os.system("python -m venv env")
+    parent = os.getcwd()
+    full_path = os.path.join(parent, name)
+    os.chdir(full_path)
+    os.system("python -m venv env")
 
-#     if OPERATING_SYSTEM == "Windows":
-#         !!!!!!!!this does not work!!!!!!!!
-#         script_path = f"{full_path}/env/Scripts/activate"
-#         exec(open(script_path).read())
-#     else:
-#         print("Installing requirements is not implemented for Linux or MacOS. You have to install them manually")
+    if OPERATING_SYSTEM == "Windows":
+        env_sub_dir = "Scripts"
+    else:
+        env_sub_dir = "bin"
 
-#     os.system("pip install -r requirements.txt")
-
+    activate_file = os.path.join(full_path, 'env', env_sub_dir, 'activate')
+    os.system(f"{activate_file} && pip install -r requirements.txt")
 
 @click.command()
 @click.argument("name")
@@ -50,7 +47,7 @@ def cli(name):
     try:
         clone_repository(name)
 
-        # install_requirements(name)
+        install_requirements(name)
 
         print("Project has been initialized successfuly!")
     except:
