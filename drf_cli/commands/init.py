@@ -35,9 +35,9 @@ def install_requirements(name):
         env_sub_dir = "Scripts"
     else:
         env_sub_dir = "bin"
-        source = "source"
+        source = ". "
 
-    activate_file = os.path.join(full_path, 'env', env_sub_dir, 'activate')
+    activate_file = os.path.join(full_path, "env", env_sub_dir, "activate")
     os.system(f"{source}{activate_file} && pip install -r requirements.txt")
 
 @click.command()
