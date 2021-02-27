@@ -8,7 +8,7 @@ install_requires = [
 ]
 
 setuptools.setup(
-    name="drf-cli",
+    name="skn-drf-cli",
     version="0.0.1",
     author="Shayan Karimi",
     author_email="shayankarimi0078@gmail.com",
