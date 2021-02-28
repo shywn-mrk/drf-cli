@@ -10,13 +10,10 @@ A usefull cli tool that creates and manages a Django Rest Framework project.
 
 ## Installation
 
-You can install this package by first cloning this repo using:
+You can install this package by using pip:
 ```
-git clone https://github.com/shywn-mrk/drf-cli.git
+pip install skn-drf-cli
 ```
-After that you can cd into drf-cli folder and run `install.sh` file. <br>
-Now you have installed this package globaly and also in editable mode so if you change the code you don't have you reinstall the package again. <br>
-This package is under development and it takes a while for me to publish it to [pypi.org](https://pypi.org/).
 
 ## Commands
 
