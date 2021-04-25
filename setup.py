@@ -9,7 +9,7 @@ install_requires = [
 
 setuptools.setup(
     name="skn-drf-cli",
-    version="1.0.0",
+    version="1.0.1",
     author="Shayan Karimi",
     author_email="shayankarimi0078@gmail.com",
     description="Django Rest Framework command-line tools",
