@@ -21,7 +21,7 @@ pip install skn-drf-cli
 
 You can initialize a new starter project using:
 ```
-drf-cli init your-project-name
+drf-cli init <your-project-name>
 ```
 This will create a starter project and you can build on top of that.
 
